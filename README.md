@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Database Performance Monitor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full‑stack **Database Performance Monitoring Tool** designed to help database administrators detect performance issues early by collecting, storing, and visualizing key database metrics.
 
-## Available Scripts
+This project demonstrates real‑world skills in **frontend development, backend API design, and database monitoring concepts**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+     Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Collects database performance metrics (connections, load simulation, history)
+* Displays metrics on a dashboard interface
+* Backend REST‑style API built with PHP
+* Frontend built with React
+* Secure configuration handling (sensitive files ignored)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+   Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Frontend
 
-### `npm run build`
+* React (JavaScript)
+* Tailwind CSS
+* Node.js & npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* PHP (REST API)
+* MySQL / MariaDB
+* XAMPP (Apache + MySQL)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+   Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+database-monitor/
+│
+├── src/                 # React frontend source code
+├── public/              # Frontend public assets
+│
+├── api/                 # PHP backend API
+│   ├── collect_metrics.php
+│   ├── dashboard_api.php
+│   ├── get_history.php
+│   ├── populate_data.php
+│   ├── simulate_load.php
+│   ├── quick_test.php
+│   ├── config.example.php
+│
+├── README.md
+├── package.json
+└── .gitignore
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ Backend Setup (PHP API)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Install **XAMPP** and start **Apache** and **MySQL**
+2. Create a MySQL database (example):
 
-## Learn More
+   ```sql
+   CREATE DATABASE db_monitor;
+   ```
+3. Copy the example config file:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   cp api/config.example.php api/config.php
+   ```
+4. Update `config.php` with your local database credentials
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Important:** `config.php` is ignored by Git and should never be committed.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Frontend Setup (React)
 
-### Analyzing the Bundle Size
+From the project root:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+npm start
+```
 
-### Making a Progressive Web App
+The application will run at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+http://localhost:3000
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ API Endpoints (Examples)
 
-### Deployment
+* `collect_metrics.php` – Collects database metrics
+* `dashboard_api.php` – Returns dashboard data
+* `get_history.php` – Fetches historical performance data
+* `simulate_load.php` – Simulates database load for testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+ Project Purpose
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Database administrators often detect performance problems **after** users are affected.
+
+This project aims to:
+
+* Monitor database behavior
+* Detect abnormal usage early
+* Provide visibility into database performance
+
+---
+
+Future Improvements
+
+* Authentication (JWT / API keys)
+* Alerting system (email / notifications)
+* Role‑based access (Admin / Viewer)
+* Charts and analytics enhancements
+* Deployment to a live server
+
+
+ AuthorNkonde Given
+
+
